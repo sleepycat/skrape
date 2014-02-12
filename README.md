@@ -1,6 +1,7 @@
 # Skrape
 
-TODO: Write a gem description
+Skrape provides a cute DSL for extracting information from pages on the
+web. You give it a url and a block and it gives you back a hash.
 
 ## Installation
 
@@ -17,9 +18,6 @@ Or install it yourself as:
     $ gem install skrape
 
 ## Usage
-
-Skrape provides a cute DSL for extracting information from pages on the
-web. You give it a url and a block and it gives you back a hash.
 
 Lets say you have a page like this:
 
