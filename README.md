@@ -1,4 +1,4 @@
-# Scratch
+# Skrape
 
 TODO: Write a gem description
 
@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'scratch'
+    gem 'skrape'
 
 And then execute:
 
@@ -14,11 +14,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install scratch
+    $ gem install skrape
 
 ## Usage
 
-Scratch provides a cute DSL for extracting information from pages on the
+Skrape provides a cute DSL for extracting information from pages on the
 web. You give it a url and a block and it gives you back a hash.
 
 Lets say you have a page like this:
@@ -29,17 +29,17 @@ And you want a hash like this:
 
     {title: "I am a title"}
 
-You can run Scratch like this:
+You can run Skrape like this:
 
-    results = Scratch::Page.new("http://example.com").extract do
+    results = Skrape::Page.new("http://example.com").extract do
       extract_title with: 'h1'
     end
 
-Scratch will give you the elements text by default, but in cases where
+Skrape will give you the elements text by default, but in cases where
 you are after something else, or need to do some massaging of the data,
 you can pass a block:
 
-    results = Scratch::Page.new(url).extract do
+    results = Skrape::Page.new(url).extract do
       extract_link_href with: 'a', and_run: proc {|link| link.attr('href').value }
     end
 
@@ -50,7 +50,7 @@ will be added to the hash of things to return.
 
 ## Contributing
 
-1. Fork it ( http://github.com/sleepycat/scratch/fork )
+1. Fork it ( http://github.com/sleepycat/skrape/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

@@ -1,9 +1,9 @@
-require "scratch/version"
+require "skrape/version"
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-module Scratch
+module Skrape
 
   class NoElementsFoundError < StandardError; end
 

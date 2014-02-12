@@ -1,4 +1,4 @@
-require_relative '../lib/scratch'
+require_relative '../lib/skrape'
 require 'webmock/rspec'
 
 RSpec.configure do |config|
