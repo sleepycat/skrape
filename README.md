@@ -45,6 +45,14 @@ The element(s) will be passed into the block as a
 Nokogiri::XML::NodeSet for you to play with. Whatever text you return
 will be added to the hash of things to return.
 
+For those moments when you want an error raised when a selector returns
+nothing you can add:
+
+    results = Skrape::Page.new(url).extract do
+      error_when_selector_returns_nothing true
+      extract_link_href with: 'a', and_run: proc {|link| link.attr('href').value }
+    end
+
 
 ## Contributing
 
