@@ -25,9 +25,18 @@ describe Skrape do
       expect(results[:link_href]).to eq "http://www.iana.org/domains/example"
     end
 
-    it "raises a helpful error when the CSS selector returns nothing" do
+    it "does not raises an error when a selector returns nothing" do
       expect{
         Skrape::Page.new(url).extract do
+          extract_nothing with: 'foo'
+        end
+      }.not_to raise_error Skrape::NoElementsFoundError
+    end
+
+    it "raises a error when when told to" do
+      expect{
+        Skrape::Page.new(url).extract do
+          error_when_selector_returns_nothing true
           extract_nothing with: 'foo'
         end
       }.to raise_error Skrape::NoElementsFoundError
