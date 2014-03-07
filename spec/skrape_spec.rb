@@ -30,7 +30,7 @@ describe Skrape do
         Skrape::Page.new(url).extract do
           extract_nothing with: 'foo'
         end
-      }.not_to raise_error Skrape::NoElementsFoundError
+      }.not_to raise_error
     end
 
     it "raises a error when when told to" do
@@ -39,7 +39,7 @@ describe Skrape do
           error_when_selector_returns_nothing true
           extract_nothing with: 'foo'
         end
-      }.to raise_error Skrape::NoElementsFoundError
+      }.to raise_error
     end
 
   end
